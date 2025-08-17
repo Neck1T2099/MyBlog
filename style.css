@@ -1,0 +1,53 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    text-align: center;
+    padding: 20px;
+}
+
+.message {
+    font-size: clamp(1.5rem, 5vw, 2.5rem);
+    font-weight: 600;
+    opacity: 0;
+    transition: opacity 1s;
+    margin-bottom: 20px;
+}
+
+.message.visible {
+    opacity: 1;
+}
+
+.hidden {
+    display: none;
+}
+
+#nameInput input {
+    padding: 10px;
+    font-size: 1rem;
+    margin-right: 10px;
+}
+
+#nameInput button {
+    padding: 10px 15px;
+    font-size: 1rem;
+}
+
+.skip-btn {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 20px;
+    font-size: 1rem;
+}
