@@ -39,22 +39,22 @@ async function runIntro() {
     showNameInput();
 }
 
-function displayFinal() {
+async function displayFinal() {
     const name = usernameInput.value.trim();
     nameInputContainer.classList.add('hidden');
     messageEl.classList.remove('visible');
-    setTimeout(() => {
-        messageEl.textContent = `Welcome ${name || ''}`.trim();
-        messageEl.classList.add('visible');
-        setTimeout(() => {
-            messageEl.classList.remove('visible');
-            setTimeout(() => {
-                messageEl.textContent = "Enjoy your time on my personal blog.";
-                messageEl.classList.add('visible');
-                mainContent.classList.remove('hidden');
-            }, 500);
-        }, 2000);
-    }, 100);
+    await sleep(1000); // wait for fade-out
+
+    messageEl.textContent = `Welcome ${name || ''}`.trim();
+    messageEl.classList.add('visible');
+    await sleep(2000); // show welcome with name
+
+    messageEl.classList.remove('visible');
+    await sleep(1000); // fade-out
+
+    messageEl.textContent = "Enjoy your time on my personal blog.";
+    messageEl.classList.add('visible');
+    mainContent.classList.remove('hidden');
 }
 
 submitNameBtn.addEventListener('click', displayFinal);
