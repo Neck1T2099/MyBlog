@@ -40,7 +40,7 @@ function displayFinal() {
     nameInputContainer.classList.add('hidden');
     messageEl.classList.remove('visible');
     setTimeout(() => {
-        messageEl.textContent = "Enjoy your time on my personal blog.";
+        messageEl.textContent = "Enjoy your time on my personal blog";
         messageEl.classList.add('visible');
     }, 100);
 }
