@@ -13,35 +13,47 @@ const nameInputContainer = document.getElementById('nameInput');
 const usernameInput = document.getElementById('username');
 const submitNameBtn = document.getElementById('submitName');
 const skipBtn = document.getElementById('skipBtn');
+const mainContent = document.getElementById('mainContent');
 
 let skipIntro = false;
 
-async function runIntro() {
-    await sleep(1000); // initial pause
-    for (const msg of messages) {
-        if (skipIntro) return;
-        messageEl.textContent = msg;
-        messageEl.classList.add('visible');
-        await sleep(2000); // show message
-        if (skipIntro) return;
-        messageEl.classList.remove('visible');
-        await sleep(1000); // fade out
-        if (skipIntro) return;
-    }
-    if (skipIntro) return;
+function showNameInput() {
     messageEl.textContent = "Welcome";
     messageEl.classList.add('visible');
     nameInputContainer.classList.remove('hidden');
     usernameInput.focus();
+    skipBtn.classList.add('hidden');
+}
+
+async function runIntro() {
+    await sleep(1000); // initial pause
+    for (const msg of messages) {
+        if (skipIntro) break;
+        messageEl.textContent = msg;
+        messageEl.classList.add('visible');
+        await sleep(2000); // show message
+        if (skipIntro) break;
+        messageEl.classList.remove('visible');
+        await sleep(1000); // fade out
+    }
+    showNameInput();
 }
 
 function displayFinal() {
-    skipIntro = true;
+    const name = usernameInput.value.trim();
     nameInputContainer.classList.add('hidden');
     messageEl.classList.remove('visible');
     setTimeout(() => {
-        messageEl.textContent = "Enjoy your time on my personal blog";
+        messageEl.textContent = `Welcome ${name || ''}`.trim();
         messageEl.classList.add('visible');
+        setTimeout(() => {
+            messageEl.classList.remove('visible');
+            setTimeout(() => {
+                messageEl.textContent = "Enjoy your time on my personal blog.";
+                messageEl.classList.add('visible');
+                mainContent.classList.remove('hidden');
+            }, 500);
+        }, 2000);
     }, 100);
 }
 
@@ -53,7 +65,8 @@ usernameInput.addEventListener('keypress', (e) => {
 });
 
 skipBtn.addEventListener('click', () => {
-    displayFinal();
+    skipIntro = true;
+    showNameInput();
 });
 
 runIntro();
