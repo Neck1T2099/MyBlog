@@ -3,9 +3,9 @@ function sleep(ms) {
 }
 
 const messages = [
-    "Welcome on my blog.",
-    "My name is Nick.",
-    "I am a beginner programmer."
+    "Welcome on my blog",
+    "My name is Nick",
+    "I am a beginner programmer"
 ];
 
 const messageEl = document.getElementById('message');
@@ -52,7 +52,7 @@ async function displayFinal() {
     messageEl.classList.remove('visible');
     await sleep(1000); // fade-out
 
-    messageEl.textContent = "Enjoy your time on my personal blog.";
+    messageEl.textContent = "Enjoy your time on my personal blog";
     messageEl.classList.add('visible');
     mainContent.classList.remove('hidden');
 }
