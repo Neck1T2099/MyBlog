@@ -144,14 +144,14 @@ body, html {
     color: #f3f4f6;
     box-shadow: 0 4px 16px rgba(0, 0, 0, .3);
     opacity: 0;
-    transition: background 0.3s, opacity 0.3s, transform 0.3s;
+    transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .radial-nav .item:hover {
     background: #565869;
 }
 
-.avatar-container:hover ~ .item {
+.radial-nav:hover ~ .item {
     transform: translate(-50%, -50%)
         rotate(calc(360deg/var(--count) * var(--i)))
         translate(95px)
