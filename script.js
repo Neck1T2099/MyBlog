@@ -18,6 +18,7 @@ const mainContent = document.getElementById('mainContent');
 const radialNav = document.getElementById('radialNav');
 const avatarImg = document.getElementById('avatar');
 const githubLink = document.getElementById('githubLink');
+const avatarContainer = document.querySelector('.avatar-container');
 // GitHub profile information
 const githubUsername = 'Neck1T2099';
 avatarImg.src = `https://github.com/${githubUsername}.png`;
@@ -101,3 +102,17 @@ if (storedName) {
 } else {
     runIntro();
 }
+
+let navCloseTimeout;
+
+avatarContainer.addEventListener('mouseenter', () => {
+    radialNav.classList.add('open');
+    clearTimeout(navCloseTimeout);
+});
+
+avatarContainer.addEventListener('mouseleave', () => {
+    clearTimeout(navCloseTimeout);
+    navCloseTimeout = setTimeout(() => {
+        radialNav.classList.remove('open');
+    }, 6000);
+});
