@@ -14,7 +14,12 @@ const usernameInput = document.getElementById('username');
 const submitNameBtn = document.getElementById('submitName');
 const skipBtn = document.getElementById('skipBtn');
 const mainContent = document.getElementById('mainContent');
-
+const radialNav = document.getElementById('radialNav');
+const avatarImg = document.getElementById('avatar');
+const githubLink = document.getElementById('githubLink');
+const githubUsername = 'Nick';
+avatarImg.src = `https://github.com/${githubUsername}.png`;
+githubLink.href = `https://github.com/${githubUsername}`;
 let skipIntro = false;
 
 function showNameInput() {
@@ -41,6 +46,7 @@ async function runIntro() {
 
 async function displayFinal() {
     const name = usernameInput.value.trim();
+    localStorage.setItem('username', name);
     nameInputContainer.classList.add('hidden');
     messageEl.classList.remove('visible');
     await sleep(1000); // wait for fade-out
