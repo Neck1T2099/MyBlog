@@ -110,7 +110,8 @@ body, html {
 
 .avatar-container .tooltip {
     position: absolute;
-    bottom: -120px;
+    top: -40px;
+    bottom: auto;
     left: 50%;
     transform: translateX(-50%);
     background: #40414f;
@@ -118,6 +119,7 @@ body, html {
     padding: 5px 10px;
     border-radius: 4px;
     opacity: 0;
+    visibility: hidden;
     pointer-events: none;
     transition: opacity 0.3s;
     white-space: nowrap;
@@ -127,6 +129,7 @@ body, html {
 
 .avatar-container:hover .tooltip {
     opacity: 1;
+    visibility: visible;
 }
 
 .radial-nav .item {
