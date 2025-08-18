@@ -13,6 +13,7 @@ const nameInputContainer = document.getElementById('nameInput');
 const usernameInput = document.getElementById('username');
 const submitNameBtn = document.getElementById('submitName');
 const skipBtn = document.getElementById('skipBtn');
+const intro = document.getElementById('intro');
 const mainContent = document.getElementById('mainContent');
 const radialNav = document.getElementById('radialNav');
 const avatarImg = document.getElementById('avatar');
@@ -64,6 +65,7 @@ async function displayFinal() {
     messageEl.classList.remove('visible');
     await sleep(1000);
 
+    intro.classList.add('hidden');
     mainContent.classList.remove('hidden');
     radialNav.classList.add('visible');
 }
@@ -74,9 +76,9 @@ async function welcomeBack(name) {
     await sleep(2000);
     messageEl.classList.remove('visible');
     await sleep(1000);
+    intro.classList.add('hidden');
     mainContent.classList.remove('hidden');
     radialNav.classList.add('visible');
-    mainContent.classList.remove('hidden');
 }
 
 submitNameBtn.addEventListener('click', displayFinal);
