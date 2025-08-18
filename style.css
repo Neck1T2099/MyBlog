@@ -103,7 +103,7 @@ body, html {
 
 .avatar-container .tooltip {
     position: absolute;
-    bottom: -35px;
+    bottom: -120px;
     left: 50%;
     transform: translateX(-50%);
     background: #40414f;
@@ -115,6 +115,7 @@ body, html {
     transition: opacity 0.3s;
     white-space: nowrap;
     font-size: 0.9rem;
+    z-index: 1;
 }
 
 .avatar-container:hover .tooltip {
