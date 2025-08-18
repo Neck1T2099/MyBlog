@@ -148,6 +148,7 @@ body, html {
     color: #f3f4f6;
     box-shadow: 0 4px 16px rgba(0, 0, 0, .3);
     opacity: 0;
+    pointer-events: none;
     transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
@@ -155,12 +156,13 @@ body, html {
     background: #565869;
 }
 
-.radial-nav:hover ~ .item {
+.avatar-container:hover ~ .item {
     transform: translate(-50%, -50%)
         rotate(calc(360deg/var(--count) * var(--i)))
-        translate(95px)
+        translate(var(--menu-radius))
         rotate(calc(-360deg/var(--count) * var(--i)));
     opacity: 1;
+    pointer-events: auto;
 }
 
 @media (max-width: 600px) {
