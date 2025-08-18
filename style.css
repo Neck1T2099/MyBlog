@@ -78,8 +78,9 @@ body, html {
 
 .radial-nav {
     position: relative;
-    width: 220px;
-    height: 220px;
+    --menu-radius: 40vmin;
+    width: calc(var(--menu-radius) * 2);
+    height: calc(var(--menu-radius) * 2);
     margin: 0;
     opacity: 0;
     transform: translateY(20px);
