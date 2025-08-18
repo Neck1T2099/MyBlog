@@ -60,6 +60,22 @@ async function displayFinal() {
 
     messageEl.textContent = "Enjoy your time on my personal blog";
     messageEl.classList.add('visible');
+    await sleep(2000);
+    messageEl.classList.remove('visible');
+    await sleep(1000);
+
+    mainContent.classList.remove('hidden');
+    radialNav.classList.add('visible');
+}
+
+async function welcomeBack(name) {
+    messageEl.textContent = `Welcome ${name}`;
+    messageEl.classList.add('visible');
+    await sleep(2000);
+    messageEl.classList.remove('visible');
+    await sleep(1000);
+    mainContent.classList.remove('hidden');
+    radialNav.classList.add('visible');
     mainContent.classList.remove('hidden');
 }
 
