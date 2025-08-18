@@ -67,6 +67,11 @@ body, html {
 }
 
 #mainContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
     text-align: center;
     padding: 20px;
 }
@@ -75,7 +80,7 @@ body, html {
     position: relative;
     width: 220px;
     height: 220px;
-    margin: 40px auto;
+    margin: 0;
     opacity: 0;
     transform: translateY(20px);
     transition: opacity 1s ease, transform 1s ease;
