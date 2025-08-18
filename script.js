@@ -18,6 +18,7 @@ const mainContent = document.getElementById('mainContent');
 const radialNav = document.getElementById('radialNav');
 const avatarImg = document.getElementById('avatar');
 const githubLink = document.getElementById('githubLink');
+// GitHub profile information
 const githubUsername = 'Neck1T2099'; /*im an idiot fr, fuck youtube tutors */
 avatarImg.src = `https://github.com/${githubUsername}.png`;
 githubLink.href = `https://github.com/${githubUsername}`;
