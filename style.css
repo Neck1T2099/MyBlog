@@ -129,7 +129,7 @@ body, html {
     top: 50%;
     transform: translate(-50%, -50%)
         rotate(calc(360deg/var(--count) * var(--i)))
-        translate(90px)
+        translate(0)
         rotate(calc(-360deg/var(--count) * var(--i)));
     background: #40414f;
     padding: 8px 12px;
@@ -137,19 +137,20 @@ body, html {
     text-decoration: none;
     color: #f3f4f6;
     box-shadow: 0 4px 16px rgba(0, 0, 0, .3);
-    opacity: .95;
-    transition: background 0.3s;
+    opacity: 0;
+    transition: background 0.3s, opacity 0.3s, transform 0.3s;
 }
 
 .radial-nav .item:hover {
     background: #565869;
 }
 
-.radial-nav:hover .item {
+.avatar-container:hover ~ .item {
     transform: translate(-50%, -50%)
         rotate(calc(360deg/var(--count) * var(--i)))
         translate(95px)
         rotate(calc(-360deg/var(--count) * var(--i)));
+    opacity: 1;
 }
 
 @media (max-width: 600px) {
