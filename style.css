@@ -78,7 +78,7 @@ body, html {
 
 .radial-nav {
     position: relative;
-    --menu-radius: 40vmin;
+    --menu-radius: 15vmin;
     width: calc(var(--menu-radius) * 2);
     height: calc(var(--menu-radius) * 2);
     margin: 0;
