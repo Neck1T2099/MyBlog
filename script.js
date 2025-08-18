@@ -91,4 +91,10 @@ skipBtn.addEventListener('click', () => {
     showNameInput();
 });
 
-runIntro();
+const storedName = localStorage.getItem('username');
+if (storedName) {
+    skipBtn.classList.add('hidden');
+    welcomeBack(storedName);
+} else {
+    runIntro();
+}
