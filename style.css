@@ -76,18 +76,49 @@ body, html {
     width: 220px;
     height: 220px;
     margin: 40px auto;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease, transform 1s ease;
 }
+
+.radial-nav.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.avatar-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    }
 
 .radial-nav .avatar {
     width: 120px;
     height: 120px;
     border-radius: 50%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     object-fit: cover;
     border: 3px solid #f3f4f6;
+}
+
+.avatar-container .tooltip {
+    position: absolute;
+    bottom: -35px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #40414f;
+    color: #f3f4f6;
+    padding: 5px 10px;
+    border-radius: 4px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+    white-space: nowrap;
+    font-size: 0.9rem;
+}
+
+.avatar-container:hover .tooltip {
+    opacity: 1;
 }
 
 .radial-nav .item {
