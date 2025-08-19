@@ -210,6 +210,22 @@ body.slide-out-down {
     animation: slideOutDown 0.5s forwards;
 }
 
+body.slide-in-left {
+    animation: slideInLeft 0.5s;
+}
+
+body.slide-in-right {
+    animation: slideInRight 0.5s;
+}
+
+body.slide-in-up {
+    animation: slideInUp 0.5s;
+}
+
+body.slide-in-down {
+    animation: slideInDown 0.5s;
+}
+
 @keyframes slideOutLeft {
     to { transform: translateX(-100%); }
 }
@@ -224,4 +240,20 @@ body.slide-out-down {
 
 @keyframes slideOutDown {
     to { transform: translateY(100%); }
+}
+
+@keyframes slideInLeft {
+    from { transform: translateX(-100%); }
+}
+
+@keyframes slideInRight {
+    from { transform: translateX(100%); }
+}
+
+@keyframes slideInUp {
+    from { transform: translateY(100%); }
+}
+
+@keyframes slideInDown {
+    from { transform: translateY(-100%); }
 }
