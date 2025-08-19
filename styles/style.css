@@ -7,6 +7,11 @@ body, html {
     color: #f3f4f6;
 }
 
+:root {
+    --page-transition-duration: 1s;
+    --page-transition-timing: ease-in-out;
+}
+
 .container {
     display: flex;
     flex-direction: column;
@@ -195,35 +200,35 @@ body {
 }
 
 body.slide-out-left {
-    animation: slideOutLeft 1.2s forwards;
+    animation: slideOutLeft var(--page-transition-duration) var(--page-transition-timing) forwards;
 }
 
 body.slide-out-right {
-    animation: slideOutRight 1.2s forwards;
+    animation: slideOutRight var(--page-transition-duration) var(--page-transition-timing) forwards;
 }
 
 body.slide-out-up {
-    animation: slideOutUp 1.2s forwards;
+    animation: slideOutUp var(--page-transition-duration) var(--page-transition-timing) forwards;
 }
 
 body.slide-out-down {
-    animation: slideOutDown 1.2s forwards;
+    animation: slideOutDown var(--page-transition-duration) var(--page-transition-timing) forwards;
 }
 
 body.slide-in-left {
-    animation: slideInLeft 1.2s;
+    animation: slideInLeft var(--page-transition-duration) var(--page-transition-timing);
 }
 
 body.slide-in-right {
-    animation: slideInRight 1.2s;
+    animation: slideInRight var(--page-transition-duration) var(--page-transition-timing);
 }
 
 body.slide-in-up {
-    animation: slideInUp 1.2s;
+    animation: slideInUp var(--page-transition-duration) var(--page-transition-timing);
 }
 
 body.slide-in-down {
-    animation: slideInDown 1.2s;
+    animation: slideInDown var(--page-transition-duration) var(--page-transition-timing);
 }
 
 @keyframes slideOutLeft {

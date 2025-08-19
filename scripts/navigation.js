@@ -1,4 +1,6 @@
 const links = document.querySelectorAll('[data-direction]');
+const TRANSITION_DURATION = 1000;
+
 links.forEach(link => {
   link.addEventListener('click', e => {
     e.preventDefault();
@@ -8,7 +10,7 @@ links.forEach(link => {
     document.body.classList.add(`slide-out-${direction}`);
     setTimeout(() => {
       window.location.href = href;
-    }, 500);
+    }, TRANSITION_DURATION);
   });
 });
 
