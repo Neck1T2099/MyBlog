@@ -171,3 +171,57 @@ body, html {
         height: 260px;
     }
 }
+
+.back-btn {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #40414f;
+    padding: 8px 12px;
+    border-radius: 20px;
+    text-decoration: none;
+    color: #f3f4f6;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, .3);
+    transition: background 0.33s ease-in-out;
+}
+
+.back-btn:hover {
+    background: #565869;
+}
+
+body {
+    overflow: hidden;
+}
+
+body.slide-out-left {
+    animation: slideOutLeft 0.5s forwards;
+}
+
+body.slide-out-right {
+    animation: slideOutRight 0.5s forwards;
+}
+
+body.slide-out-up {
+    animation: slideOutUp 0.5s forwards;
+}
+
+body.slide-out-down {
+    animation: slideOutDown 0.5s forwards;
+}
+
+@keyframes slideOutLeft {
+    to { transform: translateX(-100%); }
+}
+
+@keyframes slideOutRight {
+    to { transform: translateX(100%); }
+}
+
+@keyframes slideOutUp {
+    to { transform: translateY(-100%); }
+}
+
+@keyframes slideOutDown {
+    to { transform: translateY(100%); }
+}
