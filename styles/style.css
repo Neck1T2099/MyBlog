@@ -200,7 +200,7 @@ body, html {
 }
 
 .back-btn {
-    position: absolute;
+    position: fixed;
     background: #40414f;
     padding: 8px 12px;
     border-radius: 20px;
@@ -208,6 +208,7 @@ body, html {
     color: #f3f4f6;
     box-shadow: 0 4px 16px rgba(0, 0, 0, .3);
     transition: background 0.33s ease-in-out;
+    z-index: 1000;
 }
 
 .back-btn:hover {
