@@ -201,6 +201,9 @@ body, html {
 
 .back-btn {
     position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
     background: #40414f;
     padding: 8px 12px;
     border-radius: 20px;
@@ -215,32 +218,9 @@ body, html {
     background: #565869;
 }
 
-.back-btn[data-direction="left"] {
-    top: 50%;
-    left: 20px;
-    transform: translateY(-50%);
-}
-
-.back-btn[data-direction="right"] {
-    top: 50%;
-    right: 20px;
-    transform: translateY(-50%);
-}
-
-.back-btn[data-direction="up"] {
-    top: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-.back-btn[data-direction="down"] {
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
 body {
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: auto;
     will-change: transform;
 }
 
