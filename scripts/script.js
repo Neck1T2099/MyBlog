@@ -50,6 +50,7 @@ async function runIntro() {
 async function displayFinal() {
     const name = usernameInput.value.trim();
     localStorage.setItem('username', name);
+    sessionStorage.setItem('welcomeShown', 'true');
     nameInputContainer.classList.add('hidden');
     messageEl.classList.remove('visible');
     await sleep(1000); // wait for fade-out
@@ -73,6 +74,7 @@ async function displayFinal() {
 }
 
 async function welcomeBack(name) {
+    sessionStorage.setItem('welcomeShown', 'true');
     messageEl.textContent = `Welcome ${name}`;
     messageEl.classList.add('visible');
     await sleep(2000);
@@ -96,9 +98,16 @@ skipBtn.addEventListener('click', () => {
 });
 
 const storedName = localStorage.getItem('username');
+const welcomeShown = sessionStorage.getItem('welcomeShown');
 if (storedName) {
     skipBtn.classList.add('hidden');
-    welcomeBack(storedName);
+    if (!welcomeShown) {
+        welcomeBack(storedName);
+    } else {
+        intro.classList.add('hidden');
+        mainContent.classList.remove('hidden');
+        radialNav.classList.add('visible');
+    }
 } else {
     runIntro();
 }
