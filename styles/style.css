@@ -190,8 +190,9 @@ body, html {
 
 @media (max-width: 600px) {
     .radial-nav {
-        width: 260px;
-        height: 260px;
+        --menu-radius: 100px;
+        width: calc(var(--menu-radius) * 2);
+        height: calc(var(--menu-radius) * 2);
     }
 }
 
@@ -326,4 +327,16 @@ body.slide-in-down {
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
+}
+
+@media (max-width: 600px) {
+    .about-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .pc-video {
+        max-width: 100%;
+    }
 }
