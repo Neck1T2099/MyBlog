@@ -194,6 +194,9 @@ body, html {
         width: calc(var(--menu-radius) * 2);
         height: calc(var(--menu-radius) * 2);
     }
+
+    .avatar-container .tooltip {
+        top: calc(-1 * var(--menu-radius) - 40px);
 }
 
 .back-btn {
@@ -339,4 +342,5 @@ body.slide-in-down {
     .pc-video {
         max-width: 100%;
     }
+}
 }
