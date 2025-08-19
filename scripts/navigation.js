@@ -26,7 +26,7 @@ const transition = sessionStorage.getItem('transition');
 if (transition) {
   document.body.classList.add(`slide-in-${transition}`);
   if (avatar) {
-    const opposite = { left: 'left', right: 'right', up: 'up', down: 'down' }[transition];
+    const opposite = { left: 'right', right: 'left', up: 'down', down: 'up' }[transition];
     avatar.classList.remove('fly-left', 'fly-right', 'fly-up', 'fly-down');
     avatar.classList.add(`fly-${transition}`);
     requestAnimationFrame(() => {
