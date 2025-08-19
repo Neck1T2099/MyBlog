@@ -195,35 +195,35 @@ body {
 }
 
 body.slide-out-left {
-    animation: slideOutLeft 1.5s forwards;
+    animation: slideOutLeft 1.2s forwards;
 }
 
 body.slide-out-right {
-    animation: slideOutRight 1.5s forwards;
+    animation: slideOutRight 1.2s forwards;
 }
 
 body.slide-out-up {
-    animation: slideOutUp 1.5s forwards;
+    animation: slideOutUp 1.2s forwards;
 }
 
 body.slide-out-down {
-    animation: slideOutDown 1.5s forwards;
+    animation: slideOutDown 1.2s forwards;
 }
 
 body.slide-in-left {
-    animation: slideInLeft 1.5s;
+    animation: slideInLeft 1.2s;
 }
 
 body.slide-in-right {
-    animation: slideInRight 1.5s;
+    animation: slideInRight 1.2s;
 }
 
 body.slide-in-up {
-    animation: slideInUp 1.5s;
+    animation: slideInUp 1.2s;
 }
 
 body.slide-in-down {
-    animation: slideInDown 1.5s;
+    animation: slideInDown 1.2s;
 }
 
 @keyframes slideOutLeft {
