@@ -103,6 +103,8 @@ body, html {
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 10;
+    transition: transform var(--page-transition-duration) var(--page-transition-timing);
+    will-change: transform;
 }
 
 .radial-nav .avatar {
@@ -111,6 +113,22 @@ body, html {
     border-radius: 50%;
     object-fit: cover;
     border: 3px solid #f3f4f6;
+}
+
+.avatar-container.fly-left {
+    transform: translate(calc(-50% - var(--menu-radius)), -50%);
+}
+
+.avatar-container.fly-right {
+    transform: translate(calc(-50% + var(--menu-radius)), -50%);
+}
+
+.avatar-container.fly-up {
+    transform: translate(-50%, calc(-50% - var(--menu-radius)));
+}
+
+.avatar-container.fly-down {
+    transform: translate(-50%, calc(-50% + var(--menu-radius)));
 }
 
 .avatar-container .tooltip {
@@ -179,9 +197,6 @@ body, html {
 
 .back-btn {
     position: absolute;
-    top: 20px;
-    left: 50%;
-    transform: translateX(-50%);
     background: #40414f;
     padding: 8px 12px;
     border-radius: 20px;
@@ -195,8 +210,33 @@ body, html {
     background: #565869;
 }
 
+.back-btn[data-direction="left"] {
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+}
+
+.back-btn[data-direction="right"] {
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+}
+
+.back-btn[data-direction="up"] {
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.back-btn[data-direction="down"] {
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
 body {
     overflow: hidden;
+    will-change: transform;
 }
 
 body.slide-out-left {
@@ -232,33 +272,33 @@ body.slide-in-down {
 }
 
 @keyframes slideOutLeft {
-    to { transform: translateX(-100%); }
+    to { transform: translate3d(-100%, 0, 0); }
 }
 
 @keyframes slideOutRight {
-    to { transform: translateX(100%); }
+    to { transform: translate3d(100%, 0, 0); }
 }
 
 @keyframes slideOutUp {
-    to { transform: translateY(-100%); }
+    to { transform: translate3d(0, -100%, 0); }
 }
 
 @keyframes slideOutDown {
-    to { transform: translateY(100%); }
+    to { transform: translate3d(0, 100%, 0); }
 }
 
 @keyframes slideInLeft {
-    from { transform: translateX(-100%); }
+    from { transform: translate3d(-100%, 0, 0); }
 }
 
 @keyframes slideInRight {
-    from { transform: translateX(100%); }
+    from { transform: translate3d(100%, 0, 0); }
 }
 
 @keyframes slideInUp {
-    from { transform: translateY(100%); }
+    from { transform: translate3d(0, -100%, 0); }
 }
 
 @keyframes slideInDown {
-    from { transform: translateY(-100%); }
+    from { transform: translate3d(0, 100%, 0); }
 }
