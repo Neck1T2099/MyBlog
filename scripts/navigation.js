@@ -1,4 +1,5 @@
 const links = document.querySelectorAll('[data-direction]');
+const avatar = document.querySelector('.avatar-container');
 const TRANSITION_DURATION = 1000;
 
 links.forEach(link => {
@@ -8,6 +9,10 @@ links.forEach(link => {
     const href = link.getAttribute('href');
     sessionStorage.setItem('transition', direction);
     document.body.classList.add(`slide-out-${direction}`);
+    if (avatar) {
+      avatar.classList.remove('fly-left', 'fly-right', 'fly-up', 'fly-down');
+      avatar.classList.add(`fly-${direction}`);
+    }
     setTimeout(() => {
       window.location.href = href;
     }, TRANSITION_DURATION);
@@ -17,5 +22,8 @@ links.forEach(link => {
 const transition = sessionStorage.getItem('transition');
 if (transition) {
   document.body.classList.add(`slide-in-${transition}`);
+  if (avatar) {
+    avatar.classList.remove('fly-left', 'fly-right', 'fly-up', 'fly-down');
+  }
   sessionStorage.removeItem('transition');
 }
