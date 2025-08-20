@@ -1,3 +1,6 @@
+@import url('https://fonts.cdnfonts.com/css/mts-wide');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+
 body, html {
     margin: 0;
     padding: 0;
@@ -323,4 +326,36 @@ body.slide-in-down {
     .pc-video {
         max-width: 100%;
     }
+}
+
+/* Projects page banner */
+.myblog-banner {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    display: flex;
+    align-items: center;
+    z-index: 1000;
+}
+
+.myblog-link {
+    font-family: 'MTS Wide', sans-serif;
+    font-size: 2.5rem;
+    text-decoration: none;
+    color: #f3f4f6;
+}
+
+.myblog-desc {
+    margin-left: 15px;
+    font-family: 'Ubuntu', sans-serif;
+    opacity: 0;
+    transform: translateX(10px) scale(0.8);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    white-space: nowrap;
+}
+
+.myblog-banner:hover .myblog-desc,
+.myblog-link:hover + .myblog-desc {
+    opacity: 1;
+    transform: translateX(0) scale(1);
 }
