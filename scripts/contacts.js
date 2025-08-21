@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const imgCenter = rect.top + rect.height / 2;
             const distance = Math.abs(center - imgCenter);
             const maxDistance = center + rect.height / 2;
-            const scale = Math.max(0, 1 - distance / maxDistance);
+            const scale = Math.max(0.3, 1 - distance / maxDistance);
             img.style.transform = `scale(${scale})`;
         });
     }
