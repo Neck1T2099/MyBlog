@@ -151,14 +151,14 @@ body, html {
     transform: translateX(-50%);
     background: #40414f;
     color: #f3f4f6;
-    padding: 6px 12px;
+    padding: 10.8px 18px;
     border-radius: 4.8px;
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
     transition: opacity 0.3s;
     white-space: nowrap;
-    font-size: 1.8rem;
+    font-size: 1.2rem;
     z-index: 1;
 }
 
