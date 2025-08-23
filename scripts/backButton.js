@@ -9,13 +9,13 @@
 
   const startPress = () => {
     if (menuOpen) return;
-    backBtn.style.transition = 'background 0.33s ease-in-out, transform 3s linear';
+    backBtn.style.transition = 'background 0.33s ease-in-out, transform 1.5s linear';
     backBtn.classList.add('holding');
     pressTimer = setTimeout(() => {
       backMenu.classList.add('show-nav');
       menuOpen = true;
       backBtn.style.transition = '';
-    }, 3000);
+    }, 1500);
   };
 
   const cancelPress = () => {
@@ -29,9 +29,18 @@
   backBtn.addEventListener('mousedown', startPress);
   backBtn.addEventListener('mouseup', cancelPress);
   backBtn.addEventListener('mouseleave', cancelPress);
-  backBtn.addEventListener('touchstart', (e) => { e.preventDefault(); startPress(); });
+  backBtn.addEventListener('touchstart', startPress);
   backBtn.addEventListener('touchend', cancelPress);
   backBtn.addEventListener('touchcancel', cancelPress);
+
+  backBtn.addEventListener('click', (e) => {
+    if (menuOpen) {
+      e.preventDefault();
+      backMenu.classList.remove('show-nav');
+      backBtn.classList.remove('holding');
+      menuOpen = false;
+    }
+  });
 
   document.addEventListener('click', (e) => {
     if (menuOpen && !backMenu.contains(e.target)) {
