@@ -86,7 +86,7 @@ body, html {
 
 .radial-nav {
     position: relative;
-    --menu-radius: 15vmin;
+    --menu-radius: 18vmin;
     width: calc(var(--menu-radius) * 2);
     height: calc(var(--menu-radius) * 2);
     margin: 0;
@@ -136,20 +136,20 @@ body, html {
 
 .avatar-container .tooltip {
     position: absolute;
-    top: -40px;
+    top: -48px;
     bottom: auto;
     left: 50%;
     transform: translateX(-50%);
     background: #40414f;
     color: #f3f4f6;
-    padding: 5px 10px;
-    border-radius: 4px;
+    padding: 6px 12px;
+    border-radius: 4.8px;
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
     transition: opacity 0.3s;
     white-space: nowrap;
-    font-size: 0.9rem;
+    font-size: 1.8rem;
     z-index: 1;
 }
 
@@ -193,13 +193,13 @@ body, html {
 
 @media (max-width: 600px) {
     .radial-nav {
-        --menu-radius: 100px;
+        --menu-radius: 120px;
         width: calc(var(--menu-radius) * 2);
         height: calc(var(--menu-radius) * 2);
     }
 
     .avatar-container .tooltip {
-        top: calc(-1 * var(--menu-radius) - 40px);
+        top: calc(-1 * var(--menu-radius) - 48px);
 }
 }
 .back-btn {
