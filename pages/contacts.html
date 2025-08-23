@@ -8,7 +8,14 @@
     <link rel="stylesheet" href="../styles/contacts.css">
 </head>
 <body>
-    <a href="../index.html" class="back-btn" data-direction="down">Back in lobby</a>
+    <div class="back-menu">
+        <a href="../index.html" class="back-btn" data-direction="down">Back in lobby</a>
+        <div class="quick-nav">
+            <a href="about.html" data-direction="right">About me</a>
+            <a href="blog.html" data-direction="down">Blog</a>
+            <a href="projects.html" data-direction="left">Projects</a>
+        </div>
+    </div>
     <div class="contacts-container">
         <a href="https://www.instagram.com/nikita.vasukov" class="social-link" target="_blank" rel="noopener">
             <img src="../images/instagram-mb.png" alt="Instagram">
@@ -24,6 +31,7 @@
         </a>
     </div>
     <script src="../scripts/navigation.js"></script>
+    <script src="../scripts/backButton.js"></script>
     <script src="../scripts/contacts.js"></script>
 </body>
 </html>

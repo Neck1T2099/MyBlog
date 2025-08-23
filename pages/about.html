@@ -7,7 +7,14 @@
     <link rel="stylesheet" href="../styles/style.css">
 </head>
 <body>
-    <a href="../index.html" class="back-btn" data-direction="left">Back in lobby</a>
+<div class="back-menu">
+        <a href="../index.html" class="back-btn" data-direction="left">Back in lobby</a>
+        <div class="quick-nav">
+            <a href="blog.html" data-direction="down">Blog</a>
+            <a href="contacts.html" data-direction="up">Contacts</a>
+            <a href="projects.html" data-direction="left">Projects</a>
+        </div>
+    </div>
    <div class="container about-container fade-in highlight-frame">
         <div class="pc-info">
             <h2>PC Specs</h2>
@@ -38,5 +45,6 @@
         <video class="pc-video" src="../images/video_2025-08-19_20-12-28.mp4" autoplay muted loop playsinline></video>
     </div>
     <script src="../scripts/navigation.js"></script>
+    <script src="../scripts/backButton.js"></script>
 </body>
 </html>
