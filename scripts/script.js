@@ -23,6 +23,9 @@ const avatarContainer = document.querySelector('.avatar-container');
 const githubUsername = 'Neck1T2099';
 avatarImg.src = `https://github.com/${githubUsername}.png`;
 githubLink.href = `https://github.com/${githubUsername}`;
+avatarImg.onerror = () => {
+    avatarImg.src = 'images/myprofilephoto.png';
+};
 let skipIntro = false;
 
 function showNameInput() {

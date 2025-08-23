@@ -38,13 +38,13 @@ const transition = sessionStorage.getItem('transition');
 if (transition) {
   document.body.classList.add(`slide-in-${transition}`);
   if (avatar) {
-    } else {
-  // No transition set (e.g., direct navigation) – ensure avatar centered
-  resetAvatar();
     avatar.classList.add(`fly-${transition}`);
     requestAnimationFrame(() => {
       avatar.classList.remove(`fly-${transition}`);
     });
   }
   sessionStorage.removeItem('transition');
+  } else {
+  // No transition set (e.g., direct navigation) – ensure avatar centered
+  resetAvatar();
 }
