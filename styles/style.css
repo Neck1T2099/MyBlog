@@ -95,6 +95,7 @@ body, html {
 .radial-nav {
     position: relative;
     --menu-radius: 18vmin;
+    --item-distance: calc(var(--menu-radius) * 0.95);
     width: calc(var(--menu-radius) * 2);
     height: calc(var(--menu-radius) * 2);
     margin: 0;
@@ -176,7 +177,7 @@ body, html {
         translate(0)
         rotate(calc(-360deg/var(--count) * var(--i)));
     background: #40414f;
-    padding: 8px 12px;
+    padding: calc(8px * 1.05) calc(12px * 1.05);
     border-radius: 20px;
     text-decoration: none;
     color: #f3f4f6;
@@ -193,7 +194,7 @@ body, html {
 .radial-nav.open .item {
     transform: translate(-50%, -50%)
         rotate(calc(360deg/var(--count) * var(--i)))
-        translate(var(--menu-radius))
+        translate(var(--item-distance))
         rotate(calc(-360deg/var(--count) * var(--i)));
     opacity: 1;
     pointer-events: auto;
@@ -202,6 +203,7 @@ body, html {
 @media (max-width: 600px) {
     .radial-nav {
         --menu-radius: 120px;
+        --item-distance: calc(var(--menu-radius) * 0.95);
         width: calc(var(--menu-radius) * 2);
         height: calc(var(--menu-radius) * 2);
     }
