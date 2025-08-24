@@ -402,6 +402,15 @@ body.slide-in-down {
     z-index: 1000;
 }
 
+.reseat-banner {
+    position: fixed;
+    top: 120px;
+    left: 20px;
+    display: flex;
+    align-items: center;
+    z-index: 1000;
+}
+
 .myblog-link {
     font-family: 'MTS Wide', sans-serif;
     font-size: 2.5rem;
@@ -419,6 +428,7 @@ body.slide-in-down {
 }
 
 .myblog-banner:hover .myblog-desc,
+.reseat-banner:hover .myblog-desc,
 .myblog-link:hover + .myblog-desc {
     opacity: 1;
     transform: translateX(0) scale(1);
