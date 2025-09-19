@@ -5,10 +5,14 @@
     gap: 5vh;
     padding: 10vh 0;
 }
+.social-link {
+    display: flex;
+    justify-content: center;
+}
 
 .social-link img {
-    width: 120%;
     height: auto;
+    max-width: none;
     box-shadow: 0 4px 20px rgba(0,0,0,0.5);
     transition: transform 0.3s;
 }
