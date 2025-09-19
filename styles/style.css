@@ -288,71 +288,25 @@ body, html {
 body {
     overflow-x: hidden;
     overflow-y: auto;
-    will-change: transform;
+    will-change: opacity;
 }
 
-body.slide-out-left {
-    animation: slideOutLeft var(--page-transition-duration) var(--page-transition-timing) forwards;
+body.page-fade-out {
+    animation: pageFadeOut var(--page-transition-duration) var(--page-transition-timing) forwards;
 }
 
-body.slide-out-right {
-    animation: slideOutRight var(--page-transition-duration) var(--page-transition-timing) forwards;
+body.page-fade-in {
+    animation: pageFadeIn var(--page-transition-duration) var(--page-transition-timing);
 }
 
-body.slide-out-up {
-    animation: slideOutUp var(--page-transition-duration) var(--page-transition-timing) forwards;
+@keyframes pageFadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
 }
 
-body.slide-out-down {
-    animation: slideOutDown var(--page-transition-duration) var(--page-transition-timing) forwards;
-}
-
-body.slide-in-left {
-    animation: slideInLeft var(--page-transition-duration) var(--page-transition-timing);
-}
-
-body.slide-in-right {
-    animation: slideInRight var(--page-transition-duration) var(--page-transition-timing);
-}
-
-body.slide-in-up {
-    animation: slideInUp var(--page-transition-duration) var(--page-transition-timing);
-}
-
-body.slide-in-down {
-    animation: slideInDown var(--page-transition-duration) var(--page-transition-timing);
-}
-
-@keyframes slideOutLeft {
-    to { transform: translate3d(-100%, 0, 0); }
-}
-
-@keyframes slideOutRight {
-    to { transform: translate3d(100%, 0, 0); }
-}
-
-@keyframes slideOutUp {
-    to { transform: translate3d(0, -100%, 0); }
-}
-
-@keyframes slideOutDown {
-    to { transform: translate3d(0, 100%, 0); }
-}
-
-@keyframes slideInLeft {
-    from { transform: translate3d(-100%, 0, 0); }
-}
-
-@keyframes slideInRight {
-    from { transform: translate3d(100%, 0, 0); }
-}
-
-@keyframes slideInUp {
-    from { transform: translate3d(0, -100%, 0); }
-}
-
-@keyframes slideInDown {
-    from { transform: translate3d(0, 100%, 0); }
+@keyframes pageFadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
 /* About me page styling */

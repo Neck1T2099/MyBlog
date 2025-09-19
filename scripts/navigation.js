@@ -1,6 +1,10 @@
 const links = document.querySelectorAll('[data-direction]');
 const avatar = document.querySelector('.avatar-container');
 const TRANSITION_DURATION = 1000;
+const TRANSITION_KEY = 'transition';
+const DIRECTION_KEY = 'transitionDirection';
+const FADE_OUT_CLASS = 'page-fade-out';
+const FADE_IN_CLASS = 'page-fade-in';
 
 // Ensure the avatar always starts in the center
 const resetAvatar = () => {
@@ -13,38 +17,59 @@ const resetAvatar = () => {
 resetAvatar();
 window.addEventListener('pageshow', resetAvatar);
 
+const startFadeOut = href => {
+  document.body.classList.remove(FADE_IN_CLASS);
+  document.body.classList.add(FADE_OUT_CLASS);
+  setTimeout(() => {
+    window.location.href = href;
+  }, TRANSITION_DURATION);
+};
+
 links.forEach(link => {
   link.addEventListener('click', e => {
     e.preventDefault();
     const direction = link.dataset.direction;
     const href = link.getAttribute('href');
-    sessionStorage.setItem('transition', direction);
+    sessionStorage.setItem(TRANSITION_KEY, 'fade');
+    if (direction) {
+      sessionStorage.setItem(DIRECTION_KEY, direction);
+    }
     if (avatar) {
       resetAvatar();
       // Force reflow so the new class triggers the animation
       void avatar.offsetWidth;
-      avatar.classList.add(`fly-${direction}`);
+      if (direction) {
+        avatar.classList.add(`fly-${direction}`);
+      }
     }
     requestAnimationFrame(() => {
-      document.body.classList.add(`slide-out-${direction}`);
-      setTimeout(() => {
-        window.location.href = href;
-      }, TRANSITION_DURATION);
+      startFadeOut(href);
     });
   });
 });
 
-const transition = sessionStorage.getItem('transition');
-if (transition) {
-  document.body.classList.add(`slide-in-${transition}`);
-  if (avatar) {
-    avatar.classList.add(`fly-${transition}`);
-    requestAnimationFrame(() => {
-      avatar.classList.remove(`fly-${transition}`);
-    });
-  }
-  sessionStorage.removeItem('transition');
-  } else {
-  // No transition set (e.g., direct navigation) – ensure avatar centered
+const playFadeIn = () => {
+  document.body.classList.remove(FADE_OUT_CLASS);
+  document.body.classList.add(FADE_IN_CLASS);
+};
+
+const transition = sessionStorage.getItem(TRANSITION_KEY);
+if (transition === 'fade') {
+  requestAnimationFrame(playFadeIn);
+  sessionStorage.removeItem(TRANSITION_KEY);
+} else {
+  requestAnimationFrame(playFadeIn);
+}
+
+const storedDirection = sessionStorage.getItem(DIRECTION_KEY);
+if (avatar && storedDirection) {
+  avatar.classList.add(`fly-${storedDirection}`);
+  requestAnimationFrame(() => {
+    avatar.classList.remove(`fly-${storedDirection}`);
+  });
+  sessionStorage.removeItem(DIRECTION_KEY);
+} else if (!storedDirection) {
   resetAvatar();
+  } else {
+  sessionStorage.removeItem(DIRECTION_KEY);
 }
