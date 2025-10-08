@@ -8,11 +8,24 @@
 .social-link {
     display: flex;
     justify-content: center;
+    text-decoration: none;
+    color: inherit;
+    padding: 2vh 4vw;
+    border: 2px solid #f3f4f6;
+    border-radius: 16px;
+    background-color: rgba(64, 65, 79, 0.8);
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+.social-link:hover {
+    transform: translateY(-4px);
+    background-color: rgba(86, 88, 105, 0.85);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
 }
 
-.social-link img {
-    height: auto;
-    max-width: none;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.5);
-    transition: transform 0.3s;
+.social-title {
+    margin: 0;
+    font-size: clamp(2rem, 6vw, 3rem);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-align: center;
 }
